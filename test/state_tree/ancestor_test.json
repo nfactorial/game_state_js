@@ -1,0 +1,78 @@
+{
+    "name": "ancestor_test",
+    "main": "root1",
+    "states": [
+        {
+            "name": "root1",
+            "children": [
+                "root1_child1"
+            ]
+        },
+        {
+            "name": "root2",
+            "children": [
+                "root2_child1"
+            ]
+        },
+        {
+            "name": "root3",
+            "children": [
+                "root3_child1", "root3_child2"
+            ]
+        },
+        {
+            "name": "root4"
+        },
+        {
+            "name": "root1_child1",
+            "children": [
+                "root1_child1_child1"
+            ]
+        },
+        {
+            "name": "root2_child1",
+            "children": [
+                "root2_child1_child1", "root2_child1_child2"
+            ]
+        },
+        {
+            "name": "root3_child1",
+            "children": [
+                "root3_child1", "root3_child2", "root3_child3"
+            ]
+        },
+        {
+            "name": "root1_child1_child1"
+        },
+        {
+            "name": "root2_child1_child1",
+            "children": [
+                "root2_child1_child1_child1"
+            ]
+        },
+        {
+            "name": "root2_child1_child2"
+        },
+        {
+            "name": "root3_child1"
+        },
+        {
+            "name": "root3_child2"
+        },
+        {
+            "name": "root3_child3"
+        },
+        {
+            "name": "root2_child1_child1"
+        },
+        {
+            "name": "root2_child1_child2",
+            "children": [
+                "root2_child1_child2_child1"
+            ]
+        },
+        {
+            "name": "root2_child1_child2_child1"
+        }
+    ]
+}

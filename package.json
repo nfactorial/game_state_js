@@ -1,0 +1,22 @@
+{
+  "name": "@nfactorial/game_state_js",
+  "version": "0.0.1",
+  "description": "Simple state system for game framework, using javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nfactorial/game_state_js.git"
+  },
+  "author": "nfactorial",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nfactorial/game_state_js/issues"
+  },
+  "homepage": "https://github.com/nfactorial/game_state_js#readme",
+  "devDependencies": {
+    "chai": "^3.5.0"
+  }
+}
