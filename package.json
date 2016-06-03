@@ -18,5 +18,8 @@
   "homepage": "https://github.com/nfactorial/game_state_js#readme",
   "devDependencies": {
     "chai": "^3.5.0"
+  },
+  "dependencies": {
+    "@nfactorial/factory_node": "0.0.2"
   }
 }
