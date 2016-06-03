@@ -13,7 +13,6 @@ describe('game_state', function() {
 
         expect(state.parent).to.be.null;
         expect(state.childNames.length).to.equal(0);
-        expect(state.systemNames.length).to.equal(0);
         expect(state.children.size).to.equal(0);
         expect(state.gameSystems.size).to.equal(0);
     });
