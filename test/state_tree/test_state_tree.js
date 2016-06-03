@@ -3,7 +3,8 @@
 var chai = require('chai');
 var expect = chai.expect;
 var StateTree = require('../../lib/state_tree');
-var GameState = require('../../lib/state_tree/game_state')
+var InitArgs = require('../../lib/init_args');
+
 
 /**
  * Verify the StateTree class behaves as expected.
@@ -11,16 +12,26 @@ var GameState = require('../../lib/state_tree/game_state')
 describe('state_tree', function() {
     it('Should throw an exception if no system factory is provided', function() {
         expect(function() {
-            new StateTree(null);
-        }).to.throw('StateTree - A valid system factory must be supplied during construction.');
+            new StateTree(null, null);
+        }).to.throw('StateTree.constructor - A valid system factory must be supplied during construction.');
+    });
+
+    it('Should throw an exception if no description is provided', function() {
+        const mockFactory = {};
+
+        expect(function() {
+            new StateTree(mockFactory, null);
+        }).to.throw('StateTree.constructor - No description was provided.');
     });
 
     it('Should be empty when constructed', function() {
+        const name = 'CtorTest';
         const mockFactory = {};
+        const Description = { name: name };
 
-        const stateTree = new StateTree(mockFactory);
+        const stateTree = new StateTree(mockFactory, Description);
 
-        expect(stateTree.name).to.be.null;
+        expect(stateTree.name).to.equal(name);
         expect(stateTree.activeState).to.be.null;
         expect(stateTree.defaultState).to.be.null;
         expect(stateTree.pendingState).to.be.null;
@@ -29,13 +40,26 @@ describe('state_tree', function() {
         expect(stateTree.systemMap.size).to.equal(0);
     });
 
+    it('Should throw an exception if no InitArgs is supplied to the onInitialize method.', function() {
+        const name = 'CtorTest';
+        const mockFactory = {};
+        const Description = { name: name };
+
+        const stateTree = new StateTree(mockFactory, Description);
+
+        expect(function() {
+            stateTree.onInitialize();
+        }).to.throw('StateTree.onInitialize - No InitArgs object was provided.');
+    });
+
     it('Should correctly identify common ancestors within the hierarchy', function() {
         const mockFactory = {};
+        const initArgs = new InitArgs();
 
         const TestData = require('./ancestor_test.json');
-        const stateTree = new StateTree(mockFactory);
+        const stateTree = new StateTree(mockFactory, TestData);
 
-        stateTree.onInitialize(TestData);
+        stateTree.onInitialize(initArgs);
 
         const root1 = stateTree.getState('root1');
         const root2 = stateTree.getState('root2');
