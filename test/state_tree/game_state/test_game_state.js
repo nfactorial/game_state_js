@@ -38,17 +38,17 @@ class MockGameState {
 /**
  * Verify the GameState class behaves as expected.
  */
-describe('game_state', function() {
-    it('Should be empty when constructed', function() {
+describe('game_state', () => {
+    it('Should be empty when constructed', () => {
         const state = new GameState();
 
         expect(state.parent).to.be.null;
         expect(state.childNames.length).to.equal(0);
         expect(state.children.size).to.equal(0);
         expect(state.gameSystems.size).to.equal(0);
-    })
+    });
 
-    it('Should correctly pass onExit up the chain', function() {
+    it('Should correctly pass onExit up the chain', () => {
         const state = new GameState();
         const mockParent = new MockGameState();
 
@@ -64,7 +64,7 @@ describe('game_state', function() {
         expect(mockParent.initializeCount).to.equal(0);
     });
 
-    it('Should correctly pass onEnter up the chain', function() {
+    it('Should correctly pass onEnter up the chain', () => {
         const state = new GameState();
         const mockParent = new MockGameState();
 
@@ -80,7 +80,7 @@ describe('game_state', function() {
         expect(mockParent.initializeCount).to.equal(0);
     });
 
-    it('Should correctly pass onUpdate up the chain', function() {
+    it('Should correctly pass onUpdate up the chain', () => {
         const state = new GameState();
         const mockParent = new MockGameState();
         const updateArgs = {};

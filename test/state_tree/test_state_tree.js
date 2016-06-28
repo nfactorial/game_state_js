@@ -9,22 +9,22 @@ var InitArgs = require('../../lib/init_args');
 /**
  * Verify the StateTree class behaves as expected.
  */
-describe('state_tree', function() {
-    it('Should throw an exception if no system factory is provided', function() {
+describe('state_tree', () => {
+    it('Should throw an exception if no system factory is provided', () => {
         expect(function() {
             new StateTree(null, null);
         }).to.throw('StateTree.constructor - A valid system factory must be supplied during construction.');
     });
 
-    it('Should throw an exception if no description is provided', function() {
+    it('Should throw an exception if no description is provided', () => {
         const mockFactory = {};
 
-        expect(function() {
+        expect(() => {
             new StateTree(mockFactory, null);
         }).to.throw('StateTree.constructor - No description was provided.');
     });
 
-    it('Should be empty when constructed', function() {
+    it('Should be empty when constructed', () => {
         const name = 'CtorTest';
         const mockFactory = {};
         const Description = { name: name };
@@ -40,7 +40,7 @@ describe('state_tree', function() {
         expect(stateTree.systemMap.size).to.equal(0);
     });
 
-    it('Should throw an exception if no InitArgs is supplied to the onInitialize method.', function() {
+    it('Should throw an exception if no InitArgs is supplied to the onInitialize method.', () => {
         const name = 'CtorTest';
         const mockFactory = {};
         const Description = { name: name };
@@ -52,7 +52,7 @@ describe('state_tree', function() {
         }).to.throw('StateTree.onInitialize - No InitArgs object was provided.');
     });
 
-    it('Should correctly identify common ancestors within the hierarchy', function() {
+    it('Should correctly identify common ancestors within the hierarchy', () => {
         const mockFactory = {};
         const initArgs = new InitArgs();
 
