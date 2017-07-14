@@ -1,9 +1,9 @@
 'use strict';
 
-var chai = require('chai');
-var expect = chai.expect;
-var StateTree = require('../../lib/state_tree');
-var InitArgs = require('../../lib/init_args');
+const chai = require('chai');
+const expect = chai.expect;
+const StateTree = require('../../lib/state_tree');
+const InitArgs = require('../../lib/init_args');
 
 
 /**
