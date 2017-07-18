@@ -20,6 +20,7 @@
     "chai": "^3.5.0"
   },
   "dependencies": {
-    "@nfactorial/factory_node": "0.0.1"
+    "@nfactorial/factory_node": "0.0.1",
+    "@nfactorial/node_param": "0.0.1"
   }
 }

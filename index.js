@@ -1,3 +1,6 @@
+const parameters = require('./lib/parameters');
+
+parameters.registerParams();
 
 module.exports = {
     GameSystem: require('./lib/game_system'),
