@@ -1,6 +1,6 @@
 {
   "name": "@nfactorial/game_state_js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Simple state system for game framework, using javascript.",
   "main": "index.js",
   "scripts": {
